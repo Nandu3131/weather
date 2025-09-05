@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weather</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="weather.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header_input">
+      <input type="text" placeholder="Enter district" id="input-val">
+      <i class="fa-solid fa-magnifying-glass logo" onclick="datafetch()"></i>
+    </div>
+  </header>
+
+  <div class="main d-flex">
+    <!-- LEFT -->
+    <div class="leftdiv">
+      <div class="curretntemp leftchild p-3 d-flex flex-column gap-2">
+        <h5 class="m-0 fs-2" id="cityname">City name</h5>
+        <h5 class="m-0 fs-4"><span id="temp">0</span>&deg;C</h5>
+        <h5 class="m-0 fs-6" id="description">Sky Description</h5>
+        <hr class="line">
+        <div class="date m-0 gap-2 d-flex">
+          <i class="fa-solid fa-calendar"></i>
+          <h5 class="fs-5" id="date1">Date</h5>
+        </div>
+        <div class="time m-0 d-flex">
+          <i class="fa-regular fa-clock"></i>
+          <h5 class="fs-5" id="time1">Time</h5>
+        </div>
+      </div>
+
+      <div class="futuretemp leftchild d-flex flex-column gap-2">
+        <div class="comingdays p-3">
+          <h3 class="fs-2 m-0 p-0">Coming 5 Days</h3>
+        </div>
+        <div id="forecast" class="d-flex flex-column gap-1"></div>
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="rightdiv">
+      <div class="rigthrow rightrow1">
+  <div class="pressure">
+    <i class="fa-solid fa-droplet fs-2 icon"></i>
+    <h4>Humidity</h4>
+    <h4 id="humidity">0%</h4>
+  </div>
+  <div class="pressure">
+    <i class="fa-solid fa-gauge-high fs-2 icon"></i>
+    <h4>Pressure</h4>
+    <h4 id="pressure">0 hPa</h4>
+  </div>
+  <div class="pressure">
+    <i class="fa-solid fa-wind fs-2 icon"></i>
+    <h4>Wind Speed</h4>
+    <h4 id="windspeed">0 m/s</h4>
+  </div>
+  <div class="pressure">
+    <i class="fa-solid fa-temperature-half fs-2 icon"></i>
+    <h4>Feels Like</h4>
+    <h4 id="feelslike">0°C</h4>
+  </div>
+</div>
+
+      <div class="rigthrow">
+        <div class="air d-flex flex-column gap-1">
+          <h4>Air Quality Index (AQI)</h4>
+          <div class="aiqmetric">
+            <div class="metric text-center">
+              <h5>CO</h5>
+              <h6 id="covalue">0</h6>
+            </div>
+            <div class="metric text-center">
+              <h5>SO₂</h5>
+              <h6 id="so2value">0</h6>
+            </div>
+            <div class="metric text-center">
+              <h5>O₃</h5>
+              <h6 id="o3value">0</h6>
+            </div>
+            <div class="metric text-center">
+              <h5>NO₂</h5>
+              <h6 id="no2value">0</h6>
+            </div>
+          </div>
+        </div>
+
+        <div class="air">
+          <h5>Sunrise & Sunset</h5>
+          <div class="sunrise_set d-flex justify-content-around fs-2">
+            <div class="sunrise">
+              <i class="fa-solid fa-sun icon2"></i>
+              <h6>Sunrise</h6>
+              <h6 id="sunrisetime">6:00 AM</h6>
+            </div>
+            <div class="sunset">
+              <i class="fa-solid fa-moon icon"></i>
+              <h6>Sunset</h6>
+              <h6 id="sunsettime">6:00 PM</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="m-0">Today</h3>
+      <div class="rigthrow" id="todayTempContainer"></div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="weather.js">
+  </script>
+</body>
+</html>
